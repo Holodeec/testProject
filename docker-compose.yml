@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  reindexer:
+    image: reindexer/reindexer:latest
+    container_name: reindexer_db
+    ports:
+      - "6534:6534"
+      - "19088:9088"
+    environment:
+      - REINDEXER_DB_NAME=reindexer-db
+      - REINDEXER_USER=user
+      - REINDEXER_PASSWORD=secret
+    restart: unless-stopped

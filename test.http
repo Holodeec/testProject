@@ -1,0 +1,67 @@
+POST http://localhost:8081/api/v1/document/create
+Content-Type: application/json
+
+{
+  "title": "Test Doc",
+  "description": "Example",
+  "level1": [
+    {
+      "sort": 2,
+      "name": "Item B",
+      "level2": [
+        {"code": "B1", "value": "ValueB1"},
+        {"code": "B2", "value": "ValueB2"}
+      ]
+    },
+    {
+      "sort": 5,
+      "name": "Item A",
+      "level2": [
+        {"code": "A1", "value": "ValueA1"}
+      ]
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8081/api/v1/document/all?limit=50&offset=0
+
+###
+
+GET http://localhost:8081/api/v1/document/3a26dfbd-171f-4d4d-887c-ebcfaa6b24e1
+
+###
+
+DELETE http://localhost:8081/api/v1/document/delete/1397e809-0202-499f-9dac-025c845a40c0
+
+###
+
+PUT http://localhost:8081/api/v1/document/update
+Content-Type: application/json
+
+{
+      "id": "3a26dfbd-171f-4d4d-887c-ebcfaa6b24e1",
+      "title": "Test Doc Updated",
+      "level1": [
+        {
+          "sort": 5,
+          "level2": [
+            {
+              "code": "A1"
+            }
+          ]
+        },
+        {
+          "sort": 2,
+          "level2": [
+            {
+              "code": "B1"
+            },
+            {
+              "code": "B2"
+            }
+          ]
+        }
+      ]
+    }

@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  version: 1.1
+
+database:
+  dialect: "cproto"
+  database: "reindexer-db"
+  username: "user"
+  password: "secret"
+  port: "6534"
+  host: "localhost"
+
+cache:
+  ttl: 15m
