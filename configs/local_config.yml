@@ -11,4 +11,4 @@ database:
   host: "localhost"
 
 cache:
-  ttl: 15m
+  ttl: 1m
